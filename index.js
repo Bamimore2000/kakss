@@ -78,12 +78,12 @@ const observing = new IntersectionObserver(function(entries, observer){
   entries.forEach(function(entry){
     if (entry.isIntersecting){
         const target = entry.target;
-        console.log(target);
+        
         items.forEach((item)=>{
           item.classList.remove("current");
           if(target.dataset.id === item.getAttribute("id")){
             console.log(item.getAttribute("id"))
-            console.log(item)
+            
             item.classList.add("current")
           }
           else{
@@ -95,7 +95,6 @@ const observing = new IntersectionObserver(function(entries, observer){
 }, options)
 
 sections.forEach((section) =>{
-  console.log(section)
   observing.observe(section)
 });
 
@@ -128,14 +127,29 @@ window.addEventListener("scroll", ()=>{
 
   items.forEach(function(item){
     item.addEventListener("click", function(e){
-      // e.preventDefault();
+      e.preventDefault();
       const id = e.currentTarget.getAttribute("href").slice(1);
       const element = document.getElementById(id)
-      console.log(element)
       let position = element.offsetTop;
-      console.log(position)
+      
+      if (mainHeader.classList.contains("fixed")){
+        position = position - navHeight;
+      }
+      else if(window.innerWidth > 768 && !mainHeader.classList.contains("fixed") ){
+        position = position + navHeight/2;
+      }
+      if (window.innerWidth <= 768 && !mainHeader.classList.contains("fixed") ) {
+        position = position + navHeight;
+      } 
+      window.scrollTo({
+        left: 0,
+        top: position,
+      })
+    
     })
   })
+
+
 })
 
 hamburgers.addEventListener("click", function(){
