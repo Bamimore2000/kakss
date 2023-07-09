@@ -70,7 +70,7 @@ const fullWidthNav = document.querySelector(".full-width-nav")
 
 const options = {
   root: null,
-  threshold: 0.30,
+  threshold: 0.25,
   // rootMargin,
 }
 
@@ -116,6 +116,17 @@ portfolio.addEventListener("click", function(e){
 })
 
 window.addEventListener("scroll", ()=>{
+  const hero = document.querySelector(".hero");
+  const heroSecond = document.querySelector(".hero-second-part");
+  if (window.innerWidth > 768 && mainHeader.classList.contains("fixed")){
+    console.log("love")
+    heroSecond.classList.add("fixed")
+    hero.classList.add("fixed")
+  }
+  else{
+    heroSecond.classList.remove("fixed")
+    hero.classList.remove("fixed")
+  }
   const navHeight = mainHeader.getBoundingClientRect().height;
   const windowHeight = window.scrollY;
   if( windowHeight > navHeight){
