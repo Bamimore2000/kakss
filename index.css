@@ -66,6 +66,14 @@ div.full-width-nav.fixed{
   background-color: rgba(0, 0, 0, 0.5);
 }
 
+.fixed.hero{
+  min-height: 118vh;
+}
+.fixed.hero-second-part{
+  margin-top: 0;
+  padding-top: 310px;
+}
+
 header{
     display: flex;
     justify-content: space-between;
@@ -176,6 +184,7 @@ header a.current, .second-nav li.current{
     color: black;
     text-align: center;
     padding-bottom: 2rem;
+    padding-top: 2rem;
 }
 .about h1{
     font-weight: 600;
@@ -304,7 +313,7 @@ header a.current, .second-nav li.current{
 }
 
 
-#testimonials{
+#testimonials:not(a#testimonials){
     background-color: #F3F3F3;
     text-align: center;
     padding-top: 20px;
@@ -480,7 +489,7 @@ header a.current, .second-nav li.current{
   }
   section#contact h1{
     color: white;
-    margin-top: 3rem;
+    margin-top: 1rem;
     margin-bottom: 2rem;
     font-size: 30px;
   }
@@ -678,46 +687,24 @@ header a.current, .second-nav li.current{
 
 
   /* media queries */
+  @media screen and (max-width: 995px){
+    .navs{
+      width: 78%;
+    }
+  }
+
+  @media screen and (max-width: 940px){
+    .navs{
+      width: 84%;
+    }
+  }
 
   @media screen and (max-width: 920px){
     div.first-footer{
       width: 100%;
     }
   }
-
-  /* 768 px */
-
-  @media screen and (max-width: 768px){
-
-    
-
-    h1 :not(.first-content h1){
-      font-size: 3rem !important;
-    }
-    
-    p{
-      font-size: 16px !important;
-    }
-    .first-content h1{
-      line-height: 1;
-      font-size: 3rem;
-    }
-
-    .hero-second-part{
-      margin-top: 0;
-      width: 100%;
-      padding-top: 211px;
-    }
-
-
-    /* section three */
-
-    /*  */
-    .email-address-call-us div{
-      padding: 22px;
-    }
-
-    /* nav */
+  @media screen and (max-width: 860px){
     .navs{
       visibility:hidden;
     }
@@ -750,6 +737,7 @@ header a.current, .second-nav li.current{
     .toggled.full-width-nav {
       height: 100%;
       padding: 10px 0;
+      z-index: 999;
 
     }
     
@@ -788,7 +776,44 @@ header a.current, .second-nav li.current{
       display: block;
       margin-top: 8px;
     }
+    .hero-second-part{
+      margin-top: 0;
+      width: 100%;
+      padding-top: 313px;
+    }
 
+  }
+
+  /* 768 px */
+
+  @media screen and (max-width: 768px){
+
+    
+
+    h1 :not(.first-content h1){
+      font-size: 3rem !important;
+    }
+    
+    p{
+      font-size: 16px !important;
+    }
+    .first-content h1{
+      line-height: 1;
+      font-size: 3rem;
+    }
+
+    
+
+
+    /* section three */
+
+    /*  */
+    .email-address-call-us div{
+      padding: 22px;
+    }
+
+    /* nav */
+    
     /* contact */
     .meet-ceo-and-ig-post{
       flex-direction: column;
