@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
     text-decoration: none;
-    /* overflow-x: hidden; */
+    overflow: ;
     list-style: none;
     line-height: 1.5;
     box-sizing: border-box;
@@ -21,6 +21,8 @@ button{
 body{
     font-size: 16px;
     font-family: 'Inter', sans-serif;
+    width: 100%;
+    
     
 }
 .hero{
@@ -97,7 +99,7 @@ header{
     text-transform: capitalize;
     display: inline-block;
     text-align: center;
-    transition: all 1000ms ease-in;
+    transition: all 500ms ease-in;
     
 }
 .hamburger-container{
@@ -173,7 +175,7 @@ header a.current, .second-nav li.current{
     background-color: #FFFFFF;
     color: black;
     text-align: center;
-    padding: 0;
+    padding-bottom: 2rem;
 }
 .about h1{
     font-weight: 600;
@@ -707,8 +709,9 @@ header a.current, .second-nav li.current{
     }
 
     .hero-second-part{
-      margin-top: 200px;
+      margin-top: 0;
       width: 100%;
+      padding-top: 211px;
     }
 
 
@@ -746,17 +749,20 @@ header a.current, .second-nav li.current{
     background-color: rgb(255, 255, 255);
     height: fit-content;
     width: 100%;
+    position: fixed;
+    top: 0;
     }
     .toggled.full-width-nav {
       height: 100%;
       padding: 10px 0;
+
     }
     
     .toggled .navs {
       width: 100%;
       flex-direction: column;
       left: 0;
-      top: 70px;
+      top: 82px;
       position: absolute;
       visibility: visible;
     }
@@ -784,6 +790,8 @@ header a.current, .second-nav li.current{
       background-color: white;
       text-align: left;
       padding: 0;
+      display: block;
+      margin-top: 8px;
     }
 
     /* contact */
