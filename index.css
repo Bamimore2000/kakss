@@ -11,6 +11,9 @@
     font-family: 'Inter', sans-serif;
     scroll-behavior: smooth;
 }
+html {
+  -webkit-text-size-adjust: 100%; /* Prevent font scaling in landscape while allowing user zoom */
+}
 a{
     text-decoration: none;
     color: white;
@@ -29,7 +32,8 @@ body{
     background-image: url(images/background-images/Property\ 1=Frame\ 25\ \(1\).png);
     background-position: center;
     background-size: 150%;
-    height: 100vh;
+    min-height: 100vh;
+    padding-bottom: 2rem;
     background-color: black;
     -webkit-animation: changeBackground 5s infinite;
     
@@ -684,7 +688,20 @@ header a.current, .second-nav li.current{
     color: white;
   }
 
-
+  @media screen and (orientation: landscape) {
+    *{
+    
+    }
+    h1{
+      font-size: 2.8rem;
+    }
+    p{
+      font-size: 16px;
+    }
+    .first-content h1 {
+      font-size: 2.8rem;
+    }
+  }
 
   /* media queries */
   @media screen and (max-width: 995px){
@@ -706,7 +723,7 @@ header a.current, .second-nav li.current{
   }
   @media screen and (max-width: 860px){
     .navs{
-      visibility:hidden;
+      display: none;
     }
     .logo{
       height: 60px;
@@ -747,7 +764,7 @@ header a.current, .second-nav li.current{
       left: 0;
       top: 82px;
       position: absolute;
-      visibility: visible;
+      display: block;
     }
 
     .toggled .nav-bar {
