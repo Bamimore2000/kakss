@@ -132,14 +132,14 @@ window.addEventListener("scroll", ()=>{
       const element = document.getElementById(id)
       let position = element.offsetTop;
       
-      if (mainHeader.classList.contains("fixed")){
+      if (mainHeader.classList.contains("fixed") && window.innerWidth > 768){
         position = position - navHeight;
       }
-      else if(window.innerWidth > 768 && !mainHeader.classList.contains("fixed") ){
+      if(window.innerWidth > 768 && !mainHeader.classList.contains("fixed") ){
         position = position + navHeight/2;
       }
-      if (window.innerWidth <= 768 && !mainHeader.classList.contains("fixed") ) {
-        position = position + navHeight;
+      if (window.innerWidth <= 768) {
+        position = position - navHeight;
       } 
       window.scrollTo({
         left: 0,
