@@ -335,10 +335,10 @@ header a.current, .second-nav li.current{
     /* position: relative; */
     text-align: left;
     width: 400px;
-    height: fit-content;
+    height: max-content;
   }
   .swiper-slide, .swiper-slide {
-    height: fit-content !important;
+    height: max-content !important;
   }
   
   .quote-icon {
@@ -419,16 +419,8 @@ header a.current, .second-nav li.current{
   /* Media queries for responsive scaling */
   
   }
-  .second-nav{
-    width: auto;
-    margin: 0 auto;
-    overflow-x: auto !important;
-    display: flex;
-    cursor: pointer;
-  }
-  .second-nav li{
-    overflow-x: visible !important;
-  }
+  
+  
   .second-nav::-webkit-scrollbar{
     height: 0;
   }
@@ -439,7 +431,6 @@ header a.current, .second-nav li.current{
     background-color: #000;
     padding-top: 1rem;
     padding-bottom: 3rem;
-    overflow-x: hidden !important;
   }
   #portfolio h1{
     color: white;
@@ -453,6 +444,10 @@ header a.current, .second-nav li.current{
   ul.second-nav{
     background-color: #343434;
     width: max-content;
+    margin: 0 auto;
+    overflow: auto;
+    display: flex;
+    cursor: pointer;
   }
   ul.second-nav li{
     cursor: pointer;
@@ -833,6 +828,14 @@ header a.current, .second-nav li.current{
       flex-direction: column;
       gap: 20px;
       padding-bottom: 2rem;
+  }
+}
+@media screen and (max-width: 640px){
+  ul.second-nav{
+    width: auto;
+  }
+  ul.second-nav li{
+    font-size: 14px;
   }
 }
 
