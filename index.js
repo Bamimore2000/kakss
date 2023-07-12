@@ -182,3 +182,26 @@ hamburgers.addEventListener("click", function(){
     })
   })
 })
+
+const docs = document.querySelectorAll(".observing");
+const choice = {
+  root: null,
+  threshold: 0.1,
+}
+
+const slideIn = new IntersectionObserver((entries, observer)=>{
+  entries.forEach((entry)=>{
+    if (entry.isIntersecting){
+      entry.target.classList.add("looking")
+    }
+    else{
+      // entry.target.classList.remove("looking")
+    }
+
+  })
+}, choice);
+
+docs.forEach((doc)=>{
+  slideIn.observe(doc);
+  
+})
