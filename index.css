@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
     text-decoration: none;
-    overflow: ;
+    
     list-style: none;
     line-height: 1.5;
     box-sizing: border-box;
@@ -35,7 +35,7 @@ body{
     min-height: 100vh;
     padding-bottom: 2rem;
     background-color: black;
-    -webkit-animation: changeBackground 5s infinite;
+    animation: changeBackground 5s infinite;
     
 }
 @keyframes changeBackground {
@@ -639,10 +639,11 @@ header a.current, .second-nav li.current{
     justify-content: space-between;
     margin-top: 4rem;
     margin-bottom: 4rem;
+    gap: 10px;
     
   }
   .first-footer > div{
-    width: 30%;
+    width: 50%;
   }
   .first-footer h4{
     font-size: 20px;
@@ -688,7 +689,29 @@ header a.current, .second-nav li.current{
     color: white;
   }
 
-  @media screen and (orientation: landscape) {
+  .observing:nth-child(odd){
+    transform: translatey(50%);
+    opacity: 0.3;
+    transition: all 1000ms ease-in-out;
+    
+  }
+  .observing:nth-child(even){
+    transform: translatey(50%);
+    opacity: 0.3;
+    transition: all 700ms ease-in-out;
+  }
+  .looking.observing{
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .amend{
+    display: flex;
+    width: 60%;
+    gap: 18px;
+  }
+
+  /* @media screen and (orientation: landscape) {
     *{
     
     }
@@ -701,7 +724,7 @@ header a.current, .second-nav li.current{
     .first-content h1 {
       font-size: 2.8rem;
     }
-  }
+  } */
 
   /* media queries */
   @media screen and (max-width: 995px){
@@ -882,15 +905,6 @@ header a.current, .second-nav li.current{
 }
 
   @media screen and (max-width: 640px){
-    div.first-footer{
-      flex-direction: column;
-      gap: 10px;
-      margin-top: 0;
-      
-    }
-    
-  }
-  @media screen and (max-width: 640px){
     .show-boat .container{
       gap: 10px;
     }
@@ -899,6 +913,11 @@ header a.current, .second-nav li.current{
     }
     .show-boat .container div .name{
       font-size: 16px;
+    }
+    div.first-footer{
+      gap: 10px;
+      margin-top: 0;
+      
     }
   }
 
@@ -936,14 +955,13 @@ header a.current, .second-nav li.current{
     .sections h4{
       font-size: 18px !important;
     }
-
-    div.first-footer div{
-      text-align: center;
-    }
-    div.first-footer{
-      align-items: center;
-    }
     .first-footer h4{
       font-size: 16px;
+    }
+    .amend{
+      flex-direction: column;
+    }
+    div.first-footer{
+      gap: 20px;
     }
   }
