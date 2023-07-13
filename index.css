@@ -486,7 +486,6 @@ header a.current, .second-nav li.current{
     transition: all 300ms;
   }
   .swiper-slide.second{
-    /* width: 75% !important;  */
     height: 300px;
     border-radius: 10px;
     background-color: #3E3E3E;
