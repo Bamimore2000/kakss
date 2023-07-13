@@ -11,7 +11,7 @@ const builderSwiper = sliderElm =>{
   breakpoints:{
     480: {
       spaceBetween: 30,
-      slidesPerView: 3,
+      slidesPerView: 2,
     },
     700: {
       spaceBetween: 50,
