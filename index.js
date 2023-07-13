@@ -6,7 +6,7 @@ const builderSwiper = sliderElm =>{
   },
   clickable: true,
   centeredSlides: true,
-  spaceBetween: 40,
+  spaceBetween: 30,
   breakpoints:{
     700: {
       spaceBetween: 50,
