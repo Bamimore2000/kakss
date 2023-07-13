@@ -66,9 +66,12 @@ div.full-width-nav.fixed{
   box-shadow: 0 2px 7px rgba(0, 0, 0, 0.5);
 }
 
-.fixed #contacting.item{
-  background-color: rgba(0, 0, 0, 0.5);
+@media screen and (min-width: 861px){
+  .fixed #contacting.item{
+    background-color: rgba(0, 0, 0, 0.5);
+  }
 }
+
 
 .fixed.hero{
   min-height: 118vh;
@@ -468,6 +471,7 @@ header a.current, .second-nav li.current{
   }
   #btns-container{
     width: 100%;
+    height: 500px;
   }
   #btns-container > div{
     width: 100%;
@@ -478,22 +482,19 @@ header a.current, .second-nav li.current{
     text-align: center;
   }
   #btns-container .swiper-slide-active{
-    transform: scale(1.2) ;
+    transform: scale(1.2);
+    transition: all 300ms;
   }
   .swiper-slide.second{
-    width: 300px !important; /* Adjust width as needed */
+    /* width: 75% !important;  */
     height: 250px;
     border-radius: 10px;
+    background-color: #3E3E3E;
   }
-  .swiper-slide{
-    width: 200px;
-  }
-  .swiper-slide.second:nth-child(even){
-    background-color: #ede9e9;
-  }
-
-  .swiper-slide.second:nth-child(odd){
-    background-color: #6d1818;
+  .swiper-slide.second img{
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
   }
   
   #btns-container{
@@ -913,6 +914,10 @@ header a.current, .second-nav li.current{
       padding-bottom: 2rem;
   }
 }
+
+@media screen and (max-width: 680px){
+
+}
 @media screen and (max-width: 640px){
   ul.second-nav{
     width: auto;
@@ -988,5 +993,15 @@ header a.current, .second-nav li.current{
     #btns-container {
       width: 100%;
       height: 300px;
+    }
+    .swiper-slide.second{
+      height: 200px;
+    }
+  }
+
+  @media screen and (min-width: 481px){
+    .swiper-slide.second{
+      /* height: 300px;
+      width: 300px !important; */
     }
   }
