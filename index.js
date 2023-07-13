@@ -1,6 +1,9 @@
 var secondSwiper = new Swiper(".swiper-containerr", {
    /* Use 'coverflow' effect */
   slidesPerView: "auto",
+   autoplay: {
+      delay: 2000,
+   },
   centeredSlides: true,
   spaceBetween: 40,
   loop: true,
