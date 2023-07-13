@@ -1,26 +1,29 @@
-function updateSlidesPerView() {
-  var vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
-  
-  if (vw < 768) {
-    slidesPerView = 1;
-  } else if (vw < 992) {
-    slidesPerView = 2;
-  } else if (vw < 1200) {
-    slidesPerView = 3;
-  } else {
-    slidesPerView = 4;
-  }
-  
-  swiper.update();
-}
+var secondSwiper = new Swiper(".swiper-containerr", {
+   /* Use 'coverflow' effect */
+  slidesPerView: "auto",
+  centeredSlides: true,
+  spaceBetween: 40,
+  loop: true,
+  // centeredSlides: false,
+  // coverflowEffect: {
+  //   rotate: 0, /* Set rotation to 0 to disable rotation */
+  //   stretch: 0, /* Adjust stretching effect as needed */
+  //   depth: 0, /* Adjust depth effect as needed */
+  //   modifier: 0,
+  //   slideShadows: true
+  // }
+})
 
 
-var swiper = new Swiper(".swiper-container", {
+var swiper = new Swiper("#swiper1", {
   effect: "slide",
   grabCursor: true,
   centeredSlides: false,
   slidesPerView: 3,
   spaceBetween: 20,
+  autoplay: {
+    delay: 2000,
+  },
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
