@@ -4,15 +4,15 @@ const builderSwiper = sliderElm =>{
   autoplay:{
     delay: 3000,
   },
-    breakpoints:{
-    480: {
-      spaceBetween: 30,
-      slidesPerView: 2,
-    },
+    
   clickable: true,
   centeredSlides: true,
   spaceBetween: 30,
   breakpoints:{
+    480: {
+      spaceBetween: 30,
+      slidesPerView: 2,
+    },
     700: {
       spaceBetween: 50,
     },
