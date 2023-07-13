@@ -1,12 +1,85 @@
-var secondSwiper = new Swiper(".swiper-containerr", {
-   /* Use 'coverflow' effect */
-  slidesPerView: "auto",
-   autoplay: {
-      delay: 2000,
-   },
+const builderSwiper = sliderElm =>{
+  return new Swiper (`#${sliderElm.id}`, {
+    slidesPerView: 2,
+  autoplay:{
+    delay: 3000,
+  },
+  clickable: true,
   centeredSlides: true,
   spaceBetween: 40,
+  breakpoints:{
+    700: {
+      spaceBetween: 50,
+    },
+    800: {
+      spaceBetween: 55,
+      slidesPerView: 3,
+    },
+  },
   loop: true,
+  })
+};
+
+const allSliders = document.querySelectorAll(".cont");
+console.log(allSliders)
+
+allSliders.forEach (slider =>{
+  builderSwiper(slider)
+});
+
+const allData = document.querySelectorAll("#btns-container .swiper-wrapper");
+
+allData.forEach(data=>{
+  if (data.parentElement.id === "constructioning"){
+    for (let index = 1; index < 20; index++) {
+      data.innerHTML += `<div class="swiper-slide second">
+      <img src="images/construction/${index}.jpg" alt="">
+  </div>` 
+    }
+  }
+  else if (data.parentElement.id === "contractors"){
+    for (let index = 1; index < 20; index++) {
+      data.innerHTML += `<div class="swiper-slide second">
+      <img src="images/contractor/${index}.jpg" alt="">
+  </div>`
+    }
+  }
+  else if (data.parentElement.id === "consultant"){
+    for (let index = 1; index < 4 ; index++) {
+      data.innerHTML += `<div class="swiper-slide second">
+      <img src="images/consultant/${index}.jpg" alt="">
+  </div>`
+    }
+  }
+  else if (data.parentElement.id === "water-engineering"){
+    for (let index = 1; index < 5; index++) {
+      data.innerHTML += `<div class="swiper-slide second">
+      <img src="images/water-engineering/Water-Image${index}.jpg" alt="">
+  </div>`      
+    }
+  }
+})
+
+
+// var secondSwiper = new Swiper(".swiper-containerr", {
+//    /* Use 'coverflow' effect */
+//   slidesPerView: 2,
+//   autoplay:{
+//     delay: 3000,
+//   },
+//   clickable: true,
+//   centeredSlides: true,
+//   spaceBetween: 40,
+//   breakpoints:{
+//     700: {
+//       spaceBetween: 50,
+//     },
+//     800: {
+//       spaceBetween: 55,
+//       slidesPerView: 3,
+//     },
+//   },
+//   loop: true,
   // centeredSlides: false,
   // coverflowEffect: {
   //   rotate: 0, /* Set rotation to 0 to disable rotation */
@@ -15,7 +88,36 @@ var secondSwiper = new Swiper(".swiper-containerr", {
   //   modifier: 0,
   //   slideShadows: true
   // }
-})
+// })
+
+// var thirdSwiper = new Swiper(".swiper-containerrr", {
+//   /* Use 'coverflow' effect */
+//  slidesPerView: 2,
+//  autoplay:{
+//    delay: 3000,
+//  },
+//  clickable: true,
+//  centeredSlides: true,
+//  spaceBetween: 40,
+//  breakpoints:{
+//    700: {
+//      spaceBetween: 50,
+//    },
+//    800: {
+//      spaceBetween: 55,
+//      slidesPerView: 3,
+//    },
+//  },
+//  loop: true,
+ // centeredSlides: false,
+ // coverflowEffect: {
+ //   rotate: 0, /* Set rotation to 0 to disable rotation */
+ //   stretch: 0, /* Adjust stretching effect as needed */
+ //   depth: 0, /* Adjust depth effect as needed */
+ //   modifier: 0,
+ //   slideShadows: true
+ // }
+// })
 
 
 var swiper = new Swiper("#swiper1", {
@@ -88,7 +190,7 @@ const observing = new IntersectionObserver(function(entries, observer){
         items.forEach((item)=>{
           item.classList.remove("current");
           if(target.dataset.id === item.getAttribute("id")){
-            console.log(item.getAttribute("id"))
+            
             
             item.classList.add("current")
           }
@@ -106,8 +208,6 @@ sections.forEach((section) =>{
 
 portfolio.addEventListener("click", function(e){
   const button = e.target.dataset.id;
-  console.log("buttton is clicked")
-  console.log(button)
   if (button){
     buttons.forEach(function(button){
       button.classList.remove("current")
@@ -125,7 +225,7 @@ window.addEventListener("scroll", ()=>{
   const hero = document.querySelector(".hero");
   const heroSecond = document.querySelector(".hero-second-part");
   if (window.innerWidth > 768 && mainHeader.classList.contains("fixed")){
-    console.log("love")
+    
     heroSecond.classList.add("fixed")
     hero.classList.add("fixed")
   }
