@@ -219,10 +219,10 @@ portfolio.addEventListener("click", function(e){
       e.target.classList.add("current")
     })
     containers.forEach(function(container){
-      container.classList.remove("active");
+      container.style.display = "none";
     });
       const containerr = document.getElementById(button);
-      containerr.classList.add("active")
+      container.style.display = "block";
   }
 })
 
