@@ -222,7 +222,7 @@ portfolio.addEventListener("click", function(e){
       container.style.display = "none";
     });
       const containerr = document.getElementById(button);
-      container.style.display = "block";
+      containerr.style.display = "block";
   }
 })
 
