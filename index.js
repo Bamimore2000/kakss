@@ -3,13 +3,7 @@ const allData = document.querySelectorAll("#btns-container .swiper-wrapper");
 allData.forEach(data=>{
   
    
-   if (data.parentElement.id === "consultant"){
-    for (let index = 1; index < 4 ; index++) {
-      data.innerHTML += `<div class="swiper-slide second">
-      <img src="images/consultant/${index}.jpg" alt="">
-  </div>`
-    }
-  }
+   
   else if (data.parentElement.id === "water-engineering"){
     for (let index = 1; index < 5; index++) {
       data.innerHTML += `<div class="swiper-slide second">
