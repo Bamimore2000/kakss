@@ -1,3 +1,30 @@
+const allData = document.querySelectorAll("#btns-container .swiper-wrapper");
+
+allData.forEach(data=>{
+  
+   if (data.parentElement.id === "contractors"){
+    for (let index = 1; index < 20; index++) {
+      data.innerHTML += `<div class="swiper-slide second">
+      <img src="images/contractor/${index}.jpg" alt="">
+  </div>`
+    }
+  }
+  else if (data.parentElement.id === "consultant"){
+    for (let index = 1; index < 4 ; index++) {
+      data.innerHTML += `<div class="swiper-slide second">
+      <img src="images/consultant/${index}.jpg" alt="">
+  </div>`
+    }
+  }
+  else if (data.parentElement.id === "water-engineering"){
+    for (let index = 1; index < 5; index++) {
+      data.innerHTML += `<div class="swiper-slide second">
+      <img src="images/water-engineering/Water-Image${index}.jpg" alt="">
+  </div>`      
+    }
+  }
+})
+
 const builderSwiper = sliderElm =>{
   return new Swiper (`#${sliderElm.id}`, {
     slidesPerView: 2,
@@ -32,32 +59,7 @@ allSliders.forEach (slider =>{
   builderSwiper(slider)
 });
 
-const allData = document.querySelectorAll("#btns-container .swiper-wrapper");
 
-allData.forEach(data=>{
-  
-   if (data.parentElement.id === "contractors"){
-    for (let index = 1; index < 20; index++) {
-      data.innerHTML += `<div class="swiper-slide second">
-      <img src="images/contractor/${index}.jpg" alt="">
-  </div>`
-    }
-  }
-  else if (data.parentElement.id === "consultant"){
-    for (let index = 1; index < 4 ; index++) {
-      data.innerHTML += `<div class="swiper-slide second">
-      <img src="images/consultant/${index}.jpg" alt="">
-  </div>`
-    }
-  }
-  else if (data.parentElement.id === "water-engineering"){
-    for (let index = 1; index < 5; index++) {
-      data.innerHTML += `<div class="swiper-slide second">
-      <img src="images/water-engineering/Water-Image${index}.jpg" alt="">
-  </div>`      
-    }
-  }
-})
 
 
 // var secondSwiper = new Swiper(".swiper-containerr", {
