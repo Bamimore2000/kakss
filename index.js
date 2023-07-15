@@ -306,7 +306,7 @@ function using(usage){
         renderNumber(521, datum, 2)
     }
     else if(datum.classList.contains("twenty")){
-      renderNumber(20, datum, 20)
+      renderNumber(24, datum, 20)
     }
     else if (datum.classList.contains("hundred")){
       renderNumber(100, datum, 8)
