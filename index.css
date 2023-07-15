@@ -1044,15 +1044,15 @@ header a.current, .second-nav li.current{
     }
   .swiper-button-next,
 .swiper-button-prev{
-  height: 40px !important;
-  width: 40px !important;
+  height: 45px !important;
+  width: 45px !important;
 }
 .swiper-button-next:after, .swiper-button-prev:after{
-    font-size: 22px;
+    font-size: 22px !important;
 }
 
 .whatsapp{
-  height: 50px;
-  width: 50px;
+  height: 45px;
+  width: 45px;
 }
   }
