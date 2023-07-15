@@ -125,6 +125,11 @@ header{
   letter-spacing: 1.5;
   font-weight: 500;
   display: none;
+    color: white;
+}
+
+.fixed .kaks{
+  color: black;
 }
 
 .logo{
