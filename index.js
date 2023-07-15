@@ -285,3 +285,50 @@ docs.forEach((doc)=>{
   slideIn.observe(doc);
   
 })
+
+const data = document.querySelectorAll(".data");
+
+function renderNumber(number, location, optional,  index = 0){
+  if (index <= number){
+    location.innerText = index;
+    setTimeout(()=>{
+      renderNumber(number, location, optional, index + 1);
+    }, optional)
+  }
+}
+
+function using(usage){
+  usage.forEach((datum)=>{
+    if (datum.classList.contains("two")){
+      renderNumber(232, datum, 5)
+    }
+    else if (datum.classList.contains("five")){
+        renderNumber(521, datum, 2)
+    }
+    else if(datum.classList.contains("twenty")){
+      renderNumber(20, datum, 20)
+    }
+    else if (datum.classList.contains("hundred")){
+      renderNumber(100, datum, 8)
+    }
+  })
+}
+
+let para = {
+  root: null,
+  threshold: 0.80,
+}
+const observ = new IntersectionObserver ((entries, observer)=>{
+    entries.forEach((entry)=>{
+      if (entry.isIntersecting){
+        using([entry.target]);
+        observer.unobserve(entry.target);
+      }
+    })
+    
+}, para);
+
+data.forEach((datum)=>{
+  observ.observe(datum);
+})
+
