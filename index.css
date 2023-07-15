@@ -28,6 +28,7 @@ html {
   z-index: 998;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
   animation: whatsapp-scale 2s infinite;
+    backface-visibility: hidden;
   
 }
 @keyframes whatsapp-scale {
