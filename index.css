@@ -1047,6 +1047,9 @@ header a.current, .second-nav li.current{
   height: 40px !important;
   width: 40px !important;
 }
+.swiper-button-next:after, .swiper-button-prev:after{
+    font-size: 22px;
+}
 
 .whatsapp{
   height: 45px;
