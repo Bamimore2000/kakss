@@ -63,7 +63,7 @@ body{
 .hero{
     background-image: url(/images/background-images/bg-image-480px-1.png);
     background-position: center;
-    background-size: 120%;
+    background-size: 150%;
     min-height: 100vh;
     padding-bottom: 2rem;
     background-color: black;
