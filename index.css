@@ -61,7 +61,7 @@ body{
     
 }
 .hero{
-    background-image: url(/images/background-images/bg-image-480px-1.png);
+/*     background-image: url(/images/background-images/bg-image-480px-1.png); */
     background-position: center;
     background-size: 150%;
     min-height: 100vh;
@@ -84,7 +84,7 @@ body{
 
   @media screen and (min-width: 480px){
     .hero{
-      background-image: url(/images/background-images/bg-image-481px-1.jpg);
+/*       background-image: url(/images/background-images/bg-image-481px-1.jpg); */
     }
 
 
