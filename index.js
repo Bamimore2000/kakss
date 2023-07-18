@@ -197,7 +197,7 @@ hamburgers.addEventListener("click", function(){
 const docs = document.querySelectorAll(".observing");
 const choice = {
   root: null,
-  threshold: 0.1,
+  threshold: 0.01,
 }
 
 const slideIn = new IntersectionObserver((entries, observer)=>{
@@ -214,7 +214,6 @@ const slideIn = new IntersectionObserver((entries, observer)=>{
 
 docs.forEach((doc)=>{
   slideIn.observe(doc);
-  
 })
 
 const data = document.querySelectorAll(".data");
@@ -263,3 +262,18 @@ data.forEach((datum)=>{
   observ.observe(datum);
 })
 
+const textOverlay = document.querySelector(".text-overlay")
+const boxx = document.querySelector("#boxes");
+
+let innerBox = textOverlay.getBoundingClientRect().height;
+  boxx.style.height = innerBox;
+
+window.addEventListener("resize", ()=>{
+  let innerBox = textOverlay.getBoundingClientRect().height;
+  boxx.style.height = innerBox;
+
+  console.log(boxx.getBoundingClientRect().height)
+  console.log(innerBox)
+})
+
+  
