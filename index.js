@@ -32,68 +32,6 @@ allSliders.forEach (slider =>{
   builderSwiper(slider)
 });
 
-
-
-
-// var secondSwiper = new Swiper(".swiper-containerr", {
-//    /* Use 'coverflow' effect */
-//   slidesPerView: 2,
-//   autoplay:{
-//     delay: 3000,
-//   },
-//   clickable: true,
-//   centeredSlides: true,
-//   spaceBetween: 40,
-//   breakpoints:{
-//     700: {
-//       spaceBetween: 50,
-//     },
-//     800: {
-//       spaceBetween: 55,
-//       slidesPerView: 3,
-//     },
-//   },
-//   loop: true,
-  // centeredSlides: false,
-  // coverflowEffect: {
-  //   rotate: 0, /* Set rotation to 0 to disable rotation */
-  //   stretch: 0, /* Adjust stretching effect as needed */
-  //   depth: 0, /* Adjust depth effect as needed */
-  //   modifier: 0,
-  //   slideShadows: true
-  // }
-// })
-
-// var thirdSwiper = new Swiper(".swiper-containerrr", {
-//   /* Use 'coverflow' effect */
-//  slidesPerView: 2,
-//  autoplay:{
-//    delay: 3000,
-//  },
-//  clickable: true,
-//  centeredSlides: true,
-//  spaceBetween: 40,
-//  breakpoints:{
-//    700: {
-//      spaceBetween: 50,
-//    },
-//    800: {
-//      spaceBetween: 55,
-//      slidesPerView: 3,
-//    },
-//  },
-//  loop: true,
- // centeredSlides: false,
- // coverflowEffect: {
- //   rotate: 0, /* Set rotation to 0 to disable rotation */
- //   stretch: 0, /* Adjust stretching effect as needed */
- //   depth: 0, /* Adjust depth effect as needed */
- //   modifier: 0,
- //   slideShadows: true
- // }
-// })
-
-
 var swiper = new Swiper("#swiper1", {
   effect: "slide",
   grabCursor: true,
@@ -126,13 +64,7 @@ var swiper = new Swiper("#swiper1", {
       spaceBetween: 20
     }
   },
-  // coverflowEffect: {
-  //   rotate: 50,
-  //   stretch: 0,
-  //   depth: 100,
-  //   modifier: 1,
-  //   slideShadows: true,
-  // },
+  
   pagination: {
     el: ".swiper-pagination",
   },
@@ -153,7 +85,6 @@ const fullWidthNav = document.querySelector(".full-width-nav")
 const options = {
   root: null,
   threshold: 0.25,
-  // rootMargin,
 }
 
 const observing = new IntersectionObserver(function(entries, observer){
@@ -199,7 +130,6 @@ window.addEventListener("scroll", ()=>{
   const hero = document.querySelector(".hero");
   const heroSecond = document.querySelector(".hero-second-part");
   if (window.innerWidth > 768 && mainHeader.classList.contains("fixed")){
-    
     heroSecond.classList.add("fixed")
     hero.classList.add("fixed")
   }
@@ -207,6 +137,7 @@ window.addEventListener("scroll", ()=>{
     heroSecond.classList.remove("fixed")
     hero.classList.remove("fixed")
   }
+  
   const navHeight = mainHeader.getBoundingClientRect().height;
   const windowHeight = window.scrollY;
   if( windowHeight > navHeight){
