@@ -62,7 +62,7 @@ body{
 }
 .hero{
     background-position: center;
-    background-size: 110%;
+    background-size: cover;
     min-height: 100vh;
     padding-bottom: 2rem;
     background-color: black;
