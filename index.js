@@ -81,6 +81,7 @@ const hamburgers = document.querySelector(".hamburger-container")
 const clicked = document.querySelector(".clicked")
 const unclicked = document.querySelector(".unclicked")
 const fullWidthNav = document.querySelector(".full-width-nav")
+const heroSecondNav = document.querySelector(".hero-second-part")
 
 const options = {
   root: null,
@@ -91,12 +92,10 @@ const observing = new IntersectionObserver(function(entries, observer){
   entries.forEach(function(entry){
     if (entry.isIntersecting){
         const target = entry.target;
-        
+        console.log(target);
         items.forEach((item)=>{
           item.classList.remove("current");
           if(target.dataset.id === item.getAttribute("id")){
-            
-            
             item.classList.add("current")
           }
           else{
@@ -128,23 +127,22 @@ portfolio.addEventListener("click", function(e){
 
 window.addEventListener("scroll", ()=>{
   const hero = document.querySelector(".hero");
-  const heroSecond = document.querySelector(".hero-second-part");
   if (window.innerWidth > 768 && mainHeader.classList.contains("fixed")){
-    heroSecond.classList.add("fixed")
-    hero.classList.add("fixed")
+    hero.classList.add("fixed");
   }
   else{
-    heroSecond.classList.remove("fixed")
-    hero.classList.remove("fixed")
-  }
+    hero.classList.remove("fixed");
+  };
   
   const navHeight = mainHeader.getBoundingClientRect().height;
   const windowHeight = window.scrollY;
   if( windowHeight > navHeight){
     mainHeader.classList.add("fixed")
+    heroSecondNav.classList.add("fixed")
   }
   else{
     mainHeader.classList.remove("fixed")
+    heroSecondNav.classList.remove("fixed")
   }
 
   items.forEach(function(item){
@@ -197,7 +195,7 @@ hamburgers.addEventListener("click", function(){
 const docs = document.querySelectorAll(".observing");
 const choice = {
   root: null,
-  threshold: 0.01,
+  threshold: 0,
 }
 
 const slideIn = new IntersectionObserver((entries, observer)=>{
