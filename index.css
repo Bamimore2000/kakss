@@ -72,13 +72,13 @@ body{
 }
 @keyframes changeBackground {
     0% {
-      background-image: url(/images/background-images/bg-image-480px-1.png);
+      background-image: url(/images/background-images/bg-image-480px-1.webp);
     }
     50% {
-      background-image: url(/images/background-images/bg-image-480px-2.png);
+      background-image: url(/images/background-images/bg-image-480px-2.webp);
     }
     100% {
-      background-image: url(/images/background-images/bg-image-480px-3.png);
+      background-image: url(/images/background-images/bg-image-480px-3.webp);
     }
   }
 
@@ -92,13 +92,13 @@ body{
 
     @keyframes changeBackgrounding {
       0% {
-        background-image: url(/images/background-images/bg-image-481px-1.jpg);
+        background-image: url(/images/background-images/bg-image-481px-1.webp);
       }
       50% {
-        background-image: url(/images/background-images/bg-image-481px-2.jpg);
+        background-image: url(/images/background-images/bg-image-481px-2.webp);
       }
       100% {
-        background-image: url(/images/background-images/bg-image-481px-3.jpg);
+        background-image: url(/images/background-images/bg-image-481px-3.webp);
       }
     }
   }
@@ -314,6 +314,7 @@ header a.current, .second-nav li.current{
   height: max-content;
   background: rgba(2, 38, 26, 0.7);
   padding: 30px;
+  border-radius: 15px;
 }
 
 @media screen and (min-width: 768px){
