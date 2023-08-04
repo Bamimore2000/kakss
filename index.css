@@ -111,7 +111,8 @@ div.full-width-nav{
   transition: all 500ms ease-in-out;
 }
 div.full-width-nav.fixed{
-  background-color: rgb(255, 255, 255);
+  /* background-color: rgb(255, 255, 255); */
+  background-color: rgb(33 33 33);
   width: 100%;
   position: fixed;
   top: 0;
@@ -433,16 +434,21 @@ header a.current, .second-nav li.current{
 
 
 #testimonials:not(a#testimonials){
-    background-color: #F3F3F3;
+    /* background-color: #F3F3F3; */
+    background-color: rgb(33 33 33);
     text-align: center;
     padding-top: 20px;
     padding-bottom: 20px;
     width: 100%;
     height: auto;
 }
+.black-para{
+  color: white;
+}
 #testimonials h1{
     margin-top: 2rem;
     margin-bottom: 1rem;
+    color: white;
 }
 #testimonials p{
     font-size: 16px;
@@ -454,10 +460,12 @@ header a.current, .second-nav li.current{
 
 }
 #swiper1 .swiper-slide {
-    background-color: #fff;
+    background-color: rgb(66, 66, 66);
     width: 400px;
+    color: white;
     padding: 40px;
-    border-radius: 8px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
     /* position: relative; */
@@ -465,6 +473,51 @@ header a.current, .second-nav li.current{
     width: 400px;
     height: max-content;
   }
+  #swiper1 .swiper-slide::before{
+    height: 100%;
+    content: "";
+    width: 5px;
+    /* background: #FFB800; */
+    background: grey ;
+    display: block;
+    position: absolute;
+    left: -3px;
+    top: 0;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    transition: all 1s ease-in-out;
+  }
+  #swiper1 .swiper-slide::after{
+    height: 100%;
+    content: "";
+    width: 5px;
+    background: #FFB800;
+    /* background: grey ; */
+    z-index: 1;
+    height: 0;
+    display: block;
+    position: absolute;
+    left: -3px;
+    top: 0;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    transition: all 800ms ease-in-out;
+    height: 0%;
+  }
+  #swiper1 .swiper-slide.active::after{
+    height: 100%;
+  }
+
+  #swiper1 .swiper-slide:hover::after{
+    height: 100%;
+  }
+
+  
+  
+  .reviewer-name{
+    color: white;
+  }
+
   #swiper1 .swiper-slide, #swiper1 .swiper-slide {
     height: max-content !important;
   }
@@ -492,14 +545,14 @@ header a.current, .second-nav li.current{
     font-size: 8rem;
     line-height: 1;
     display: block;
-    margin-left: -20px;
+    margin-left: -7px;
   }
   
   .reviewer-name {
     font-size: 19px;
     font-weight: 400;
     margin-top: 85px;
-    color: black;
+    color: white;
   }
   
   .remark {
