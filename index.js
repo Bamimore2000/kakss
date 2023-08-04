@@ -30,7 +30,9 @@ const builderSwiper = sliderElm =>{
 };
 
 const allSliders = document.querySelectorAll(".cont");
-console.log(allSliders)
+console.log(allSliders);
+
+
 
 allSliders.forEach (slider =>{
   builderSwiper(slider)
@@ -73,7 +75,7 @@ var swiper = new Swiper("#swiper1", {
     el: ".swiper-pagination",
   },
 });
-
+const slidesForTestimonials = document.querySelectorAll("#swiper1 .swiper-slide");
 const buttons = document.querySelectorAll(".btns");
 const portfolio = document.getElementById("portfolio")
 const containers = document.querySelectorAll(".cont")
@@ -86,6 +88,18 @@ const clicked = document.querySelector(".clicked")
 const unclicked = document.querySelector(".unclicked")
 const fullWidthNav = document.querySelector(".full-width-nav")
 const heroSecondNav = document.querySelector(".hero-second-part")
+
+slidesForTestimonials.forEach((slide)=>{
+  slide.addEventListener("touchstart", (event)=>{
+    event.preventDefault();
+    slide.classList.add("active")
+  })
+  slide.addEventListener("touchend", (event)=>{
+    event.preventDefault();
+    slide.classList.remove("active")
+  })
+})
+console.log(slidesForTestimonials)
 
 const options = {
   root: null,
