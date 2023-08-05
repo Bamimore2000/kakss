@@ -405,14 +405,14 @@ div.image-owner{
   top: 0px;
   left: 0;
   z-index: -1;
-  scale: 1.5;
+  transform: scale(1.5);
 }
 .union{
   position: absolute;
   top: -120px;
   left: 0;
   z-index: -1;
-  scale: 3;
+  transform: scale(3);
 }
 
 
