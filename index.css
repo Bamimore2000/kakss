@@ -27,8 +27,8 @@ html {
   z-index: 998;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
   animation: whatsapp-scale 2s infinite;
-  backface-visibility: hidden;
-  transform: translateZ(0);
+backface-visibility: hidden;
+    transform: translateZ(0);
   
 }
 @keyframes whatsapp-scale {
@@ -223,6 +223,10 @@ header a.current, .second-nav li.current{
     color: black;
     
 }
+.contact{
+    
+    
+}
 .yellow{
     color: #FFB800;
     font-weight: 500;
@@ -324,13 +328,15 @@ header a.current, .second-nav li.current{
  }
 
 /* second part */
-.about{
+#about.about.section{
     /* min-height: 90vh; */
-    background-color: #FFFFFF;
-    color: black;
+    color:white;
     text-align: center;
     padding-bottom: 4rem;
     padding-top: 2rem;
+    background-color: black;
+    position: relative;
+    overflow: hidden;
 }
 .about h1{
     font-weight: 600;
@@ -367,8 +373,9 @@ header a.current, .second-nav li.current{
   gap: 15px;
   padding-bottom: 2rem;
   align-items: top;
+  overflow: hidden;
 }
-.image-box{
+.boxes-img{
   object-fit: cover;
   height: calc(500px - 20px);
   border-radius: 5px;
@@ -391,7 +398,7 @@ div.image-owner{
   #boxes{
     flex-direction: column;
   }
-  .image-box{
+  .boxes-img{
     width: 100%;
     min-height: 300px;
   }
@@ -402,23 +409,22 @@ div.image-owner{
 .blur{
   display: block;
   position: absolute;
-  top: -50%
-  left: -50%;
-  z-index: -1;
-  display: none;
-    
-    
+  top: 0;
   
 }
 .union{
   position: absolute;
-  top: -120px;
+  top: 0;
   left: 0;
-  z-index: -1;
-  display: none;
-  
+  width: 100%;
+
 }
 
+@media screen and (max-width: 500px){
+  .union{
+    height: 50%;
+  }
+}
 
 .services{
     text-align: center;
@@ -881,7 +887,6 @@ div.image-owner{
     color: white;
     font-size: 20px;
     padding: 1rem;
-    text-align: initial;
   }
   .small-profile h4{
     font-weight: 300;
@@ -1251,6 +1256,9 @@ div.image-owner{
     }
     div.first-footer{
       gap: 20px;
+    }
+    .first-footer{
+      flex-direction: row-reverse;
     }
 
   }
