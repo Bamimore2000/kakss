@@ -877,6 +877,7 @@ div.image-owner{
     color: white;
     font-size: 20px;
     padding: 1rem;
+    text-align: initial;
   }
   .small-profile h4{
     font-weight: 300;
