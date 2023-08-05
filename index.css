@@ -405,14 +405,16 @@ div.image-owner{
   top: 0px;
   left: 0;
   z-index: -1;
-  font-size: 300%;
+  height: 200%;
+  width: 200%;
 }
 .union{
   position: absolute;
   top: -120px;
   left: 0;
   z-index: -1;
-  font-size: 500%;
+  height: 200%;
+  width: 200%;
 }
 
 
