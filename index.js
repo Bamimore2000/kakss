@@ -120,7 +120,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 const options = {
   root: null,
-  threshold: 0.5,
+  threshold: 0.30,
 }
 
 const observing = new IntersectionObserver(function(entries, observer){
