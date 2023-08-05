@@ -402,8 +402,8 @@ div.image-owner{
 .blur{
   display: block;
   position: absolute;
-  top: 0px;
-  left: 0;
+  top: -20%
+  left: -20%;
   z-index: -1;
   
 }
