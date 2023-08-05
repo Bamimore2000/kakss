@@ -368,7 +368,7 @@ header a.current, .second-nav li.current{
   padding-bottom: 2rem;
   align-items: top;
 }
-#boxes img{
+image-box{
   object-fit: cover;
   height: calc(500px - 20px);
   border-radius: 5px;
