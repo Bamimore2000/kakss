@@ -424,6 +424,9 @@ div.image-owner{
   .union{
     height: 50%;
   }
+    .blur{
+    top: -224px;
+    }
 }
 
 .services{
