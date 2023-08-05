@@ -92,11 +92,9 @@ console.log(sections)
 
 slidesForTestimonials.forEach((slide)=>{
   slide.addEventListener("touchstart", (event)=>{
-    event.preventDefault();
     slide.classList.add("active")
   })
   slide.addEventListener("touchend", (event)=>{
-    event.preventDefault();
     slide.classList.remove("active")
   })
 })
