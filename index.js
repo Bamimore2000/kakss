@@ -88,6 +88,7 @@ const clicked = document.querySelector(".clicked")
 const unclicked = document.querySelector(".unclicked")
 const fullWidthNav = document.querySelector(".full-width-nav")
 const heroSecondNav = document.querySelector(".hero-second-part")
+console.log(sections)
 
 slidesForTestimonials.forEach((slide)=>{
   slide.addEventListener("touchstart", (event)=>{
@@ -101,14 +102,34 @@ slidesForTestimonials.forEach((slide)=>{
 })
 console.log(slidesForTestimonials)
 
+document.addEventListener("DOMContentLoaded", function() {
+  const slides = document.querySelectorAll(".slidess");
+  let currentSlideIndex = 0;
+  function showNextSlide() {
+    slides[currentSlideIndex].classList.remove("active");
+    currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+    slides[currentSlideIndex].classList.add("active");
+    setTimeout(showNextSlide, 2000);
+  }
+
+  setTimeout(showNextSlide, 2000);
+
+  // Show the first slide initially
+  slides[currentSlideIndex].classList.add("active");
+});
+
+
+
 const options = {
   root: null,
-  threshold: 0.25,
+  threshold: 0.5,
 }
 
 const observing = new IntersectionObserver(function(entries, observer){
   entries.forEach(function(entry){
+    
     if (entry.isIntersecting){
+      console.log(entry)
         const target = entry.target;
         console.log(target);
         items.forEach((item)=>{
@@ -278,18 +299,7 @@ data.forEach((datum)=>{
   observ.observe(datum);
 })
 
-const textOverlay = document.querySelector(".text-overlay")
-const boxx = document.querySelector("#boxes");
 
-let innerBox = textOverlay.getBoundingClientRect().height;
-  boxx.style.height = innerBox;
 
-window.addEventListener("resize", ()=>{
-  let innerBox = textOverlay.getBoundingClientRect().height;
-  boxx.style.height = innerBox;
-
-  console.log(boxx.getBoundingClientRect().height)
-  console.log(innerBox)
-})
 
   
