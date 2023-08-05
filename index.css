@@ -391,7 +391,7 @@ div.image-owner{
   #boxes{
     flex-direction: column;
   }
-  #boxes img{
+  .image-box{
     width: 100%;
     min-height: 300px;
   }
