@@ -417,7 +417,11 @@ div.image-owner{
   top: 0;
   left: 0;
   width: 100%;
-
+}
+@media screen and (max-width: 768px){
+  .union{
+      width: 124%;
+  }
 }
 
 @media screen and (max-width: 500px){
