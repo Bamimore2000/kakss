@@ -397,11 +397,15 @@ div.image-owner{
 @media screen and (max-width: 1100px){
   #boxes{
     flex-direction: column;
+      padding-bottom: 0;
   }
   .boxes-img{
     width: 100%;
     min-height: 300px;
   }
+  #about.about.section{
+    padding-bottom: 0;    
+ }
 }
 #boxes > div{
   margin-top: 2rem;
