@@ -402,9 +402,10 @@ div.image-owner{
 .blur{
   display: block;
   position: absolute;
-  top: -20%
-  left: -20%;
+  top: -50%
+  left: -50%;
   z-index: -1;
+    
   
 }
 .union{
