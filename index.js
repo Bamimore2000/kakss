@@ -89,6 +89,25 @@ const unclicked = document.querySelector(".unclicked")
 const fullWidthNav = document.querySelector(".full-width-nav")
 const heroSecondNav = document.querySelector(".hero-second-part")
 const questions = document.querySelectorAll(".query");
+const images = document.querySelectorAll(".swiper-slide.second img")
+
+images.forEach((image)=>{
+  image.setAttribute('onclick', 'expandImage(this)');
+  image.setAttribute('loading', 'eager')
+})
+
+
+function expandImage(image) {
+  const expandedImage = document.getElementById('expandedImage');
+  expandedImage.src = image.src;
+  const expandedImageOverlay = document.getElementById('expandedImageOverlay');
+  expandedImageOverlay.style.display = 'grid';
+}
+
+function closeExpandedImage() {
+  const expandedImageOverlay = document.getElementById('expandedImageOverlay');
+  expandedImageOverlay.style.display = 'none';
+}
 
 questions.forEach((question)=>{
  question.addEventListener("click", (e)=>{
