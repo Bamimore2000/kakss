@@ -14,6 +14,10 @@
 html {
   -webkit-text-size-adjust: 100%; /* Prevent font scaling in landscape while allowing user zoom */
 }
+.secondary-text{
+  color: #A4A4A4 !important;
+  margin-bottom: 30px;
+}
 .whatsapp{
   fill: green;
   position: fixed;
@@ -336,6 +340,7 @@ div#testimonials{
 
  .bi-chevron-up, .bi-chevron-down{
   font-size: 25px;
+  transition: all 500ms ease-in-out;
  }
  .bi-chevron-up{
   display: none;
@@ -352,6 +357,7 @@ div#testimonials{
  .faqs p{
   color: #A4A4A4;
   font-size: 18px;
+  margin-bottom: 30px;
  }
  .faq h1{
   font-size: 30px;
@@ -363,8 +369,10 @@ div#testimonials{
  }
 
  p.answer{
-  display: none;
-  padding: 10px;
+  height: 0px;
+  /* padding: 10px; */
+  overflow: hidden;
+  transition: all 500ms ease-in-out;
  }
 
  .questions{
@@ -384,7 +392,8 @@ div#testimonials{
  }
 
  .active p.answer{
-  display: block;
+  height: auto;
+  padding: 10px;
  }
 
  @media screen and (max-width: 860px) {
@@ -418,7 +427,7 @@ div#testimonials{
     /* min-height: 90vh; */
     color:white;
     text-align: center;
-    padding-bottom: 4rem;
+    /* padding-bottom: 1rem; */
     padding-top: 2rem;
     background-color: black;
     position: relative;
@@ -514,7 +523,6 @@ div.image-owner{
 
 .services{
     text-align: center;
-    padding-top: 2rem;
     background-color: black;
     color: white;
 }
@@ -560,7 +568,6 @@ div.image-owner{
 }
 .sections-holder{
     padding-bottom: 10px;
-    padding-top: 10px;
 }
 .show-boat{
     width: 100%;
@@ -992,7 +999,7 @@ div.image-owner{
     background-color: black;
     color: white;
     padding-top: 3rem;
-    min-height: 90vh;
+    min-height: 65vh;
   }
   div.first-footer{
     display: flex;
