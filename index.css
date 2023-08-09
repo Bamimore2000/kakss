@@ -1365,6 +1365,9 @@ div.image-owner{
     .swiper-slide.second{
       height: 200px;
     }
+    .second-content{
+        font-size: 17px;
+    }
   }
 
   @media screen and (max-width: 481px){
