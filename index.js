@@ -88,13 +88,29 @@ const clicked = document.querySelector(".clicked")
 const unclicked = document.querySelector(".unclicked")
 const fullWidthNav = document.querySelector(".full-width-nav")
 const heroSecondNav = document.querySelector(".hero-second-part")
+const questions = document.querySelectorAll(".query");
+
+questions.forEach((question)=>{
+ question.addEventListener("click", (e)=>{
+  const parent = e.currentTarget.parentElement.parentElement;
+    questions.forEach((secondQuestion)=>{
+      let secondParent = secondQuestion.parentElement.parentElement;
+      if (secondParent != parent){
+        secondParent.classList.remove("active")
+      }
+    })
+    parent.classList.toggle('active');
+ })
+})
 console.log(sections)
 
 slidesForTestimonials.forEach((slide)=>{
   slide.addEventListener("touchstart", (event)=>{
+    event.preventDefault();
     slide.classList.add("active")
   })
   slide.addEventListener("touchend", (event)=>{
+    event.preventDefault();
     slide.classList.remove("active")
   })
 })
@@ -120,7 +136,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 const options = {
   root: null,
-  threshold: 0.30,
+  threshold: 0.50,
 }
 
 const observing = new IntersectionObserver(function(entries, observer){
