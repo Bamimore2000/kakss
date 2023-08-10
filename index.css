@@ -69,8 +69,15 @@ button{
 }
 
 .expanded-image{
-  max-width: 80%;
-  max-height: 80%;
+    width: 90%;
+    max-height: calc(100vh - 150px);
+    max-width: 900px;
+}
+
+@media screen and (max-width: 480px) {
+  .expanded-image{
+    width: 100vw;
+  }
 }
 .cancel-button{
   position: absolute;
