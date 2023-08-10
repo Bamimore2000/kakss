@@ -156,6 +156,10 @@ div.full-width-nav.fixed{
   backdrop-filter: blur(20px); /* Apply the blur effect */
   box-shadow: 0 2px 7px rgba(0, 0, 0, 0.5);
 }
+div.full-width-nav.fixed.toggled{
+  background-color: black;
+}
+
 
 @media screen and (min-width: 861px){
   .fixed #contacting.item{
@@ -1179,7 +1183,7 @@ div.image-owner{
     top: 0;
     }
     .toggled.full-width-nav {
-      background-color: inherit;
+      background-color: black;
       height: 100%;
       padding: 10px 0;
       z-index: 999;
@@ -1216,7 +1220,7 @@ div.image-owner{
     }
 
     .toggled #contacting{
-      background-color: inherit !important;
+      background-color: black !important;
       border: none;
       color: white !important;
     }
@@ -1226,7 +1230,7 @@ div.image-owner{
     }
     .toggled #contacting{
       color: black;
-      background-color: inherit;
+      background-color: black;
       text-align: left;
       padding: 0;
       display: block;
