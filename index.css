@@ -63,7 +63,7 @@ button{
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.9);
   place-items: center;
   z-index: 999;
 }
@@ -148,12 +148,12 @@ div.full-width-nav{
 }
 div.full-width-nav.fixed{
   /* background-color: rgb(255, 255, 255); */
-  background-color: rgb(33, 33, 33);
+  background-color: rgb(33, 33, 33, 0.9);
   width: 100%;
   position: fixed;
   top: 0;
   z-index: 999;
-  backdrop-filter: blur(10px); /* Apply the blur effect */
+  backdrop-filter: blur(20px); /* Apply the blur effect */
   box-shadow: 0 2px 7px rgba(0, 0, 0, 0.5);
 }
 
@@ -1179,7 +1179,7 @@ div.image-owner{
     top: 0;
     }
     .toggled.full-width-nav {
-      background-color: rgb(33 33 33);
+      background-color: inherit;
       height: 100%;
       padding: 10px 0;
       z-index: 999;
@@ -1198,7 +1198,7 @@ div.image-owner{
     .toggled .nav-bar {
       flex-direction: column;
       align-items: flex-start;
-      background-color: rgb(33 33 33);
+      background-color: inherit;
     }
 
     .toggled .nav-bar a {
@@ -1212,11 +1212,11 @@ div.image-owner{
     
     .toggled .current{
       color: white;
-      background-color: rgb(33 33 33);
+      background-color: inherit;
     }
 
     .toggled #contacting{
-      background-color: rgb(33 33 33) !important;
+      background-color: inherit !important;
       border: none;
       color: white !important;
     }
@@ -1226,7 +1226,7 @@ div.image-owner{
     }
     .toggled #contacting{
       color: black;
-      background-color: white;
+      background-color: inherit;
       text-align: left;
       padding: 0;
       display: block;
