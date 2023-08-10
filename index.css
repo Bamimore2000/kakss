@@ -69,7 +69,8 @@ button{
 }
 
 .expanded-image{
-    width: 90%;
+    
+    object-fit: cover;
     max-height: calc(100vh - 150px);
     max-width: 900px;
 }
@@ -147,11 +148,12 @@ div.full-width-nav{
 }
 div.full-width-nav.fixed{
   /* background-color: rgb(255, 255, 255); */
-  background-color: rgb(33 33 33);
+  background-color: rgb(33, 33, 33, 0.8);
   width: 100%;
   position: fixed;
   top: 0;
   z-index: 999;
+  backdrop-filter: blur(10px); /* Apply the blur effect */
   box-shadow: 0 2px 7px rgba(0, 0, 0, 0.5);
 }
 
