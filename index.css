@@ -148,7 +148,7 @@ div.full-width-nav{
 }
 div.full-width-nav.fixed{
   /* background-color: rgb(255, 255, 255); */
-  background-color: rgb(33, 33, 33, 0.9);
+  background-color: rgb(33, 33, 33);
   width: 100%;
   position: fixed;
   top: 0;
