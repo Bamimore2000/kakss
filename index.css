@@ -14,10 +14,26 @@
 html {
   -webkit-text-size-adjust: 100%; /* Prevent font scaling in landscape while allowing user zoom */
 }
+
+/* global */
 .secondary-text{
   color: #A4A4A4 !important;
   margin-bottom: 30px;
 }
+
+a{
+  text-decoration: none;
+  color: white;
+}
+button{
+  border: none;
+}
+.container{
+  width: 90%;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+/* whatsapp overlay */
 .whatsapp{
   fill: green;
   position: fixed;
@@ -31,10 +47,10 @@ html {
   z-index: 998;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
   animation: whatsapp-scale 2s infinite;
-backface-visibility: hidden;
-    transform: translateZ(0);
-  
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
+/* animations for whatsapp icon */
 @keyframes whatsapp-scale {
   0% {
     transform: scale(1);
@@ -49,13 +65,26 @@ backface-visibility: hidden;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   }
 }
-a{
-    text-decoration: none;
-    color: white;
+
+
+body{
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    width: 100%;
+    
+    
 }
-button{
-    border: none;
+.hero{
+    background-position: center;
+    width: 100%;
+    background-color: black;
+    min-height: 100vh;
+    padding-bottom: 2rem;
+    animation: changeBackground 13s infinite ease-in-out;
+    
 }
+
+/* expanded image overlay for images  */
 .expanded-image-overlay{
   display: none;
   position: fixed;
@@ -69,7 +98,6 @@ button{
 }
 
 .expanded-image{
-    
     object-fit: cover;
     max-height: calc(100vh - 150px);
     max-width: 900px;
@@ -80,6 +108,7 @@ button{
     width: 100vw;
   }
 }
+
 .cancel-button{
   position: absolute;
   top: 10px;
@@ -88,61 +117,18 @@ button{
   color: white;
   cursor: pointer;
 }
-body{
-    font-size: 16px;
-    font-family: 'Inter', sans-serif;
-    width: 100%;
-    
-    
-}
-.hero{
-    background-position: center;
-    width: 100%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-color: black;
-    min-height: 100vh;
-    padding-bottom: 2rem;
-    animation: changeBackground 13s infinite ease-in-out;
-    
-}
-/* @keyframes changeBackground {
-    0% {
-      background-image: url(/images/background-images/bg-image-480px-1.webp);
-    }
-    50% {
-      background-image: url(/images/background-images/bg-image-480px-2.webp);
-    }
-    100% {
-      background-image: url(/images/background-images/bg-image-480px-3.webp);
-    }
-  } */
+
+/* end of overlay for images */
 
   @media screen and (min-width: 481px){
     .hero{
         background-size: cover;
         animation: changeBackgrounding 13s infinite;
-        background-size: cover;
     }
-
-
-    /* @keyframes changeBackgrounding {
-      0% {
-        background-image: url(/images/background-images/bg-image-481px-1.webp);
-      }
-      50% {
-        background-image: url(/images/background-images/bg-image-481px-2.webp);
-      }
-      100% {
-        background-image: url(/images/background-images/bg-image-481px-3.webp);
-      }
-    } */
   }
-.container{
-    width: 90%;
-    max-width: 1500px;
-    margin: 0 auto;
-}
+
+/* nav-menu  */
+
 div.full-width-nav{
   transition: all 500ms ease-in-out;
 }
@@ -154,14 +140,13 @@ div.full-width-nav.fixed{
   backdrop-filter: blur(50px); /* Apply the blur effect */
   box-shadow: 0 2px 7px rgba(0, 0, 0, 0.5);
   -webkit-backdrop-filter: blur(8px);
-    backdrop-filter: blur(8px);
-    background-color: rgba(0,0,0,.82);
-    box-shadow: 0 1px rgba(255,255,255,.12)
+  backdrop-filter: blur(8px);
+  background-color: rgba(0,0,0,.82);
+  box-shadow: 0 1px rgba(255,255,255,.12)
 }
 div.full-width-nav.fixed.toggled{
   background-color: black;
 }
-
 
 @media screen and (min-width: 861px){
   .fixed #contacting.item{
@@ -215,7 +200,7 @@ header{
   display: flex;
   justify-content: space-between;
   justify-self: center;
-  width: 70%;
+  width: 74%;
 }
 .nav-bar a, .second-nav li{
     color: #ffffff;
@@ -266,10 +251,7 @@ header a.current, .second-nav li.current{
     color: black;
     
 }
-.contact{
-    
-    
-}
+
 .yellow{
     color: #FFB800;
     font-weight: 500;
@@ -349,10 +331,19 @@ header a.current, .second-nav li.current{
   opacity: 1;
   display: none;
   object-fit: cover;
+  height: 118vh;
 }
 .slidess.active{
   opacity: 1;
+  height: 118vh;
 }
+.fixed .slides.bigger{
+  height: 118vh;
+}
+.fixed .slides.active{
+  height: 118vh;
+}
+
 .bigger{
   display: none;
 }
@@ -481,22 +472,24 @@ div#testimonials{
 .about h1{
     font-weight: 600;
 }
-.about-us h1, #services h1, #testimonials h1, #portfolio h1, section#contact h1, .faq h1{
-    position: relative;
-    display: inline-block;
-    padding: 3px;
+
+.bold-text{
+  position: relative;
+  display: inline-block;
+  padding: 3px;
 }
-.about-us h1::before, #services h1::before, #testimonials h1::before, #portfolio h1::before, section#contact h1::before, .faq h1::before{
-    content: '';
-    background-color: #FFB800;
-    position: absolute;
-    height: 4px;
-    width: 60%;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    display: block;
-    border-radius: 4px;
+    
+.bold-text::before{
+  content: '';
+  background-color: #FFB800;
+  position: absolute;
+  height: 4px;
+  width: 60%;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: block;
+  border-radius: 4px;
 }
 
 .about{
@@ -646,7 +639,7 @@ div.image-owner{
     padding-top: 20px;
     padding-bottom: 20px;
     width: 100%;
-    height: 95vh;
+    min-height: 95vh;
     
 }
 .black-para{
@@ -664,6 +657,7 @@ div.image-owner{
 #swiper1.swiper-container{
     width: 100%;
     margin-top: 1rem;
+    height: fit-content;
 
 }
 #swiper1 .swiper-slide {
@@ -811,12 +805,12 @@ div.image-owner{
     right: 10px;
   }
 
-  .swiper-pagination {
+  /* .swiper-pagination {
     position: absolute;
     bottom: 192px !important;
     left: 50%;
     transform: translateX(-50%);
-  }
+  } */
   .swiper-pagination-bullet{
     width: 10px !important;
     height: 10px !important;
@@ -1140,15 +1134,21 @@ div.image-owner{
   } */
 
   /* media queries */
-  @media screen and (max-width: 995px){
+  @media screen and (max-width: 1200px){
     .navs{
       width: 78%;
     }
   }
+  @media screen and (max-width: 995px){
+    .navs{
+      width: 83%;
+    }
+  }
+
 
   @media screen and (max-width: 940px){
     .navs{
-      width: 84%;
+      width: 90%;
     }
   }
 
@@ -1157,7 +1157,9 @@ div.image-owner{
       width: 100%;
     }
   }
-  @media screen and (max-width: 860px){
+
+
+  @media screen and (max-width: 943px){
     .navs{
       display: none;
     }
@@ -1256,9 +1258,6 @@ div.image-owner{
   /* 768 px */
 
   @media screen and (max-width: 768px){
-
-    
-
     h1 :not(.first-content h1){
       font-size: 3rem !important;
     }
@@ -1310,24 +1309,21 @@ div.image-owner{
     }
 
     /* swiper */
-    .swiper-pagination{
+    /* .swiper-pagination{
       bottom: 221px !important;
-    }
+    } */
 
     .second-footer {
-      padding-top: 3rem;
+      padding-top: 1rem;
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
       flex-direction: column;
       gap: 20px;
-      padding-bottom: 2rem;
+      padding-bottom: 1rem;
   }
 }
 
-@media screen and (max-width: 680px){
-
-}
 @media screen and (max-width: 640px){
   ul.second-nav{
     width: auto;
@@ -1426,4 +1422,36 @@ div.image-owner{
   height: 45px;
   width: 45px;
 }
+  }
+
+  @media screen and (max-width: 280px){
+    p, .sections p{
+      font-size: 12px !important;
+    }
+    h1{
+      font-size: 20px !important;
+    }
+    h2{
+      font-size: 17px !important;
+    }
+    h3{
+      font-size: 15px !important;
+    }
+    h4, .sections h4{
+      font-size: 13px !important;
+    }
+    .show-boat .container{
+      gap: 10px;
+    }
+    .show-boat .container div .figure{
+      font-size: 15px;
+    }
+    .show-boat .container div .name{
+      font-size: 13px;
+    }
+    div.first-footer{
+      gap: 10px;
+      margin-top: 0;
+      
+    }
   }
