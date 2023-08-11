@@ -321,6 +321,7 @@ header a.current, .second-nav li.current{
   height: 100%;
   opacity: 1;
   object-fit: cover;
+    height: 118vh;
 }
 .initial.bigger{
   position: absolute;
