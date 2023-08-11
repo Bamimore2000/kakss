@@ -154,7 +154,7 @@ div.full-width-nav.fixed{
   top: 0;
   z-index: 999;
   backdrop-filter: blur(35px); /* Apply the blur effect */
-  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 2px 7px rgba(0, 0, 0, 0);
 }
 div.full-width-nav.fixed.toggled{
   background-color: black;
