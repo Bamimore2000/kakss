@@ -13,9 +13,16 @@ const builderSwiper = sliderElm =>{
   centeredSlides: true,
   spaceBetween: 30,
   breakpoints:{
-    480: {
+    200:{
+      slidesPerView: 1
+    },
+    300: {
       spaceBetween: 30,
       slidesPerView: 2,
+    },
+
+    600:{
+      spaceBetween: 36
     },
     700: {
       spaceBetween: 50,
@@ -52,6 +59,9 @@ var swiper = new Swiper("#swiper1", {
     prevEl: '.swiper-button-prev',
   },
   breakpoints: {
+    200:{
+      slidesPerView: 1
+    },
     300:{
       slidesPerView: 1.10,
       spaceBetween: 20
