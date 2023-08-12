@@ -1,38 +1,38 @@
-const builderSwiper = sliderElm =>{
-  return new Swiper (`#${sliderElm.id}`, {
+const builderSwiper = sliderElm => {
+  return new Swiper(`#${sliderElm.id}`, {
     slidesPerView: 2,
-  autoplay:{
-    delay: 3000,
-  },
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-    
-  clickable: true,
-  centeredSlides: true,
-  spaceBetween: 30,
-  breakpoints:{
-    200:{
-      slidesPerView: 1
+    autoplay: {
+      delay: 3000,
     },
-    300: {
-      spaceBetween: 30,
-      slidesPerView: 2,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
     },
 
-    600:{
-      spaceBetween: 36
+    clickable: true,
+    centeredSlides: true,
+    spaceBetween: 30,
+    breakpoints: {
+      200: {
+        slidesPerView: 1
+      },
+      300: {
+        spaceBetween: 30,
+        slidesPerView: 2,
+      },
+
+      600: {
+        spaceBetween: 36
+      },
+      700: {
+        spaceBetween: 50,
+      },
+      800: {
+        spaceBetween: 55,
+        slidesPerView: 3,
+      },
     },
-    700: {
-      spaceBetween: 50,
-    },
-    800: {
-      spaceBetween: 55,
-      slidesPerView: 3,
-    },
-  },
-  loop: true,
+    loop: true,
   })
 };
 
@@ -41,7 +41,7 @@ console.log(allSliders);
 
 
 
-allSliders.forEach (slider =>{
+allSliders.forEach(slider => {
   builderSwiper(slider)
 });
 
@@ -59,15 +59,15 @@ var swiper = new Swiper("#swiper1", {
     prevEl: '.swiper-button-prev',
   },
   breakpoints: {
-    200:{
+    200: {
       slidesPerView: 1
     },
-    300:{
-      slidesPerView: 1.10,
-      spaceBetween: 20
+    300: {
+      slidesPerView: 1.04,
+      spaceBetween: 10
     },
 
-    680:{
+    680: {
       slidesPerView: 1.25,
       spaceBetween: 15
     },
@@ -80,7 +80,7 @@ var swiper = new Swiper("#swiper1", {
       spaceBetween: 20
     }
   },
-  
+
   pagination: {
     el: ".swiper-pagination",
   },
@@ -101,7 +101,7 @@ const heroSecondNav = document.querySelector(".hero-second-part")
 const questions = document.querySelectorAll(".query");
 const images = document.querySelectorAll(".swiper-slide.second img")
 
-images.forEach((image)=>{
+images.forEach((image) => {
   image.setAttribute('onclick', 'expandImage(this)');
   image.setAttribute('loading', 'eager')
 })
@@ -116,36 +116,36 @@ function expandImage(image) {
 
 function closeExpandedImage() {
   const expandedImageOverlay = document.getElementById('expandedImageOverlay');
-  expandedImageOverlay.style.display = 'none';
+  expandedImageOverlay.style.display = 'none';
 }
 
-questions.forEach((question)=>{
- question.addEventListener("click", (e)=>{
-  const parent = e.currentTarget.parentElement.parentElement;
-    questions.forEach((secondQuestion)=>{
+questions.forEach((question) => {
+  question.addEventListener("click", (e) => {
+    const parent = e.currentTarget.parentElement.parentElement;
+    questions.forEach((secondQuestion) => {
       let secondParent = secondQuestion.parentElement.parentElement;
-      if (secondParent != parent){
+      if (secondParent != parent) {
         secondParent.classList.remove("active")
       }
     })
     parent.classList.toggle('active');
- })
+  })
 })
 console.log(sections)
 
-slidesForTestimonials.forEach((slide)=>{
-  slide.addEventListener("touchstart", (event)=>{
+slidesForTestimonials.forEach((slide) => {
+  slide.addEventListener("touchstart", (event) => {
     event.preventDefault();
     slide.classList.add("active")
   })
-  slide.addEventListener("touchend", (event)=>{
+  slide.addEventListener("touchend", (event) => {
     event.preventDefault();
     slide.classList.remove("active")
   })
 })
 console.log(slidesForTestimonials)
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   const slides = document.querySelectorAll(".slidess");
   let currentSlideIndex = 0;
   function showNextSlide() {
@@ -168,104 +168,104 @@ const options = {
   threshold: 0.50,
 }
 
-const observing = new IntersectionObserver(function(entries, observer){
-  entries.forEach(function(entry){
-    
-    if (entry.isIntersecting){
+const observing = new IntersectionObserver(function (entries, observer) {
+  entries.forEach(function (entry) {
+
+    if (entry.isIntersecting) {
       console.log(entry)
-        const target = entry.target;
-        console.log(target);
-        items.forEach((item)=>{
-          item.classList.remove("current");
-          if(target.dataset.id === item.getAttribute("id")){
-            item.classList.add("current")
-          }
-          else{
-            item.classList.remove("current")
-          }
-        })
+      const target = entry.target;
+      console.log(target);
+      items.forEach((item) => {
+        item.classList.remove("current");
+        if (target.dataset.id === item.getAttribute("id")) {
+          item.classList.add("current")
+        }
+        else {
+          item.classList.remove("current")
+        }
+      })
     }
   })
 }, options)
 
-sections.forEach((section) =>{
+sections.forEach((section) => {
   observing.observe(section)
 });
 
-portfolio.addEventListener("click", function(e){
+portfolio.addEventListener("click", function (e) {
   const button = e.target.dataset.id;
-  if (button){
-    buttons.forEach(function(button){
+  if (button) {
+    buttons.forEach(function (button) {
       button.classList.remove("current")
       e.target.classList.add("current")
     })
-    containers.forEach(function(container){
+    containers.forEach(function (container) {
       container.style.display = "none";
     });
-      const containerr = document.getElementById(button);
-      containerr.style.display = "block";
+    const containerr = document.getElementById(button);
+    containerr.style.display = "block";
   }
 })
 
-window.addEventListener("scroll", ()=>{
+window.addEventListener("scroll", () => {
   const hero = document.querySelector(".hero");
-  if (window.innerWidth > 768 && mainHeader.classList.contains("fixed")){
+  if (window.innerWidth > 768 && mainHeader.classList.contains("fixed")) {
     hero.classList.add("fixed");
   }
-  else{
+  else {
     hero.classList.remove("fixed");
   };
-  
+
   const navHeight = mainHeader.getBoundingClientRect().height;
   const windowHeight = window.scrollY;
-  if( windowHeight > navHeight){
+  if (windowHeight > navHeight) {
     mainHeader.classList.add("fixed")
     heroSecondNav.classList.add("fixed")
   }
-  else{
+  else {
     mainHeader.classList.remove("fixed")
     heroSecondNav.classList.remove("fixed")
   }
 
-  items.forEach(function(item){
-    item.addEventListener("click", function(e){
+  items.forEach(function (item) {
+    item.addEventListener("click", function (e) {
       e.preventDefault();
       const id = e.currentTarget.getAttribute("href").slice(1);
       const element = document.getElementById(id)
       let position = element.offsetTop;
-      
-      if (mainHeader.classList.contains("fixed") && window.innerWidth > 768){
+
+      if (mainHeader.classList.contains("fixed") && window.innerWidth > 768) {
         position = position - navHeight;
       }
-      if(window.innerWidth > 768 && !mainHeader.classList.contains("fixed") ){
-        position = position + navHeight/2;
+      if (window.innerWidth > 768 && !mainHeader.classList.contains("fixed")) {
+        position = position + navHeight / 2;
       }
       if (window.innerWidth <= 768) {
         position = position - navHeight;
-      } 
+      }
       window.scrollTo({
         left: 0,
         top: position,
       })
-    
+
     })
   })
 
 
 })
 
-hamburgers.addEventListener("click", function(){
+hamburgers.addEventListener("click", function () {
   fullWidthNav.classList.toggle("toggled");
-  if (fullWidthNav.classList.contains("toggled")){
+  if (fullWidthNav.classList.contains("toggled")) {
     clicked.style.display = "block";
     unclicked.style.display = "none";
   }
-  else{
+  else {
     clicked.style.display = "none";
     unclicked.style.display = "block";
   }
-  items.forEach((item)=>{
-    item.addEventListener("click", function(){
+  items.forEach((item) => {
+    item.addEventListener("click", function () {
       fullWidthNav.classList.remove("toggled");
       unclicked.style.display = "block";
       clicked.style.display = "none";
@@ -280,45 +280,45 @@ const choice = {
   threshold: 0,
 }
 
-const slideIn = new IntersectionObserver((entries, observer)=>{
-  entries.forEach((entry)=>{
-    if (entry.isIntersecting){
+const slideIn = new IntersectionObserver((entries, observer) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
       entry.target.classList.add("looking")
     }
-    else{
+    else {
       // entry.target.classList.remove("looking")
     }
 
   })
 }, choice);
 
-docs.forEach((doc)=>{
+docs.forEach((doc) => {
   slideIn.observe(doc);
 })
 
 const data = document.querySelectorAll(".data");
 
-function renderNumber(number, location, optional,  index = 0){
-  if (index <= number){
+function renderNumber(number, location, optional, index = 0) {
+  if (index <= number) {
     location.innerText = index;
-    setTimeout(()=>{
+    setTimeout(() => {
       renderNumber(number, location, optional, index + 1);
     }, optional)
   }
 }
 
-function using(usage){
-  usage.forEach((datum)=>{
-    if (datum.classList.contains("two")){
+function using(usage) {
+  usage.forEach((datum) => {
+    if (datum.classList.contains("two")) {
       renderNumber(232, datum, 5)
     }
-    else if (datum.classList.contains("five")){
-        renderNumber(521, datum, 2)
+    else if (datum.classList.contains("five")) {
+      renderNumber(521, datum, 2)
     }
-    else if(datum.classList.contains("twenty")){
+    else if (datum.classList.contains("twenty")) {
       renderNumber(24, datum, 20)
     }
-    else if (datum.classList.contains("hundred")){
+    else if (datum.classList.contains("hundred")) {
       renderNumber(100, datum, 8)
     }
   })
@@ -328,21 +328,20 @@ let para = {
   root: null,
   threshold: 0.80,
 }
-const observ = new IntersectionObserver ((entries, observer)=>{
-    entries.forEach((entry)=>{
-      if (entry.isIntersecting){
-        using([entry.target]);
-        observer.unobserve(entry.target);
-      }
-    })
-    
+const observ = new IntersectionObserver((entries, observer) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      using([entry.target]);
+      observer.unobserve(entry.target);
+    }
+  })
+
 }, para);
 
-data.forEach((datum)=>{
+data.forEach((datum) => {
   observ.observe(datum);
 })
 
 
 
 
-  
