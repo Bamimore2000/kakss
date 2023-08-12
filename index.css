@@ -1026,9 +1026,12 @@ div.image-owner{
   }
   .meet-ceo-and-ig-post img{
     width: 100%;
-    height: calc(100% - 167px);
+    
     object-fit: cover;
   }
+@media screen and (min-width: 480px){
+    height: calc(100% - 167px);
+}
   .small-profile{
     background-color: #303030;
     color: white;
