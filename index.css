@@ -200,7 +200,7 @@ header{
   display: flex;
   justify-content: space-between;
   justify-self: center;
-  width: 74%;
+  /* width: 74%; */
 }
 .nav-bar a, .second-nav li{
     color: #ffffff;
@@ -298,6 +298,10 @@ header a.current, .second-nav li.current{
    font-size: 20px;
 }
 
+@media (min-width: 768px) and (max-width: 1024px) {
+  
+}
+
 @media screen and (max-width: 480px){
   .second-content{
     font-size: 16px;
@@ -342,7 +346,7 @@ header a.current, .second-nav li.current{
   height: 118vh;
 }
 .fixed .slides.active{
-  height: 118vh;
+  height: 600px;
 }
 
 .bigger{
@@ -640,7 +644,7 @@ div.image-owner{
     padding-top: 20px;
     padding-bottom: 20px;
     width: 100%;
-    min-height: 95vh;
+    min-height: 60vh;
     
 }
 .black-para{
@@ -1011,11 +1015,19 @@ div.image-owner{
     display: flex;
     gap: 30px;
   }
+
+  @media screen and (max-width: 220px){
+    .meet-ceo-and-ig-post{
+      overflow: hidden;
+    }
+  }
   .meet-ceo-and-ig-post > div{
     width: 40%;
   }
   .meet-ceo-and-ig-post img{
     width: 100%;
+    height: calc(100% - 167px);
+    object-fit: cover;
   }
   .small-profile{
     background-color: #303030;
@@ -1039,7 +1051,8 @@ div.image-owner{
     background-color: black;
     color: white;
     padding-top: 3rem;
-    min-height: 65vh;
+    min-height: fit-content;
+    padding-bottom: 3rem;
   }
   div.first-footer{
     display: flex;
@@ -1118,7 +1131,18 @@ div.image-owner{
     width: 60%;
     gap: 18px;
   }
+ #contacting.item.first-header{
+  display: none;
+ }
 
+ .fixed #contacting.item.second-header:hover{
+  background-color: initial;
+  color:white;
+ }
+ .fixed #contacting.item.second-header.current{
+  background-color: white;
+  color: black;
+ }
   /* @media screen and (orientation: landscape) {
     *{
     
@@ -1135,7 +1159,7 @@ div.image-owner{
   } */
 
   /* media queries */
-  @media screen and (max-width: 1200px){
+  /* @media screen and (max-width: 1200px){
     .navs{
       width: 78%;
     }
@@ -1151,7 +1175,7 @@ div.image-owner{
     .navs{
       width: 90%;
     }
-  }
+  } */
 
   @media screen and (max-width: 920px){
     div.first-footer{
@@ -1164,10 +1188,19 @@ div.image-owner{
     .navs{
       display: none;
     }
+    #contacting.item.first-header{
+      display: block;
+     }
+    #contacting.item.second-header{
+      display: none;
+    }
     .logo{
       height: 60px;
       width: 60px;
-  }
+   }
+   .item.first-header{
+      display: block;
+    }
 
     .hamburger-container{
       display: block;
