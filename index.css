@@ -95,6 +95,7 @@ body{
   background-color: rgba(0, 0, 0, 0.9);
   place-items: center;
   z-index: 999;
+  backdrop-filter: blur(5px);
 }
 
 .expanded-image{
@@ -352,7 +353,7 @@ header a.current, .second-nav li.current{
 .bigger{
   display: none;
 }
-div#testimonials{
+div#testimonials, div#about{
   border-bottom: 1px #343434 solid;
 }
  /* @keyframes fade {
@@ -503,7 +504,7 @@ div#testimonials{
 }
 
 #boxes p{
-    font-size: 1.25rem;
+    font-size: 1.125rem;
     
 }
 #boxes{
@@ -568,6 +569,9 @@ div.image-owner{
     text-align: center;
     background-color: black;
     color: white;
+}
+.services p{
+  font-size: 1.125rem;
 }
 .services h1{
     font-weight: 600;
@@ -881,6 +885,7 @@ div.image-owner{
     height: 300px;
     border-radius: 10px;
     background-color: #3E3E3E;
+    cursor: pointer;
   }
   .swiper-slide.second img{
     height: 100%;
@@ -1026,12 +1031,9 @@ div.image-owner{
   }
   .meet-ceo-and-ig-post img{
     width: 100%;
-    
+    height: calc(100% - 167px);
     object-fit: cover;
   }
-@media screen and (min-width: 480px){
-    height: calc(100% - 167px);
-}
   .small-profile{
     background-color: #303030;
     color: white;
