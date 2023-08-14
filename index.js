@@ -99,7 +99,16 @@ const unclicked = document.querySelector(".unclicked")
 const fullWidthNav = document.querySelector(".full-width-nav")
 const heroSecondNav = document.querySelector(".hero-second-part")
 const questions = document.querySelectorAll(".query");
-const images = document.querySelectorAll(".swiper-slide.second img")
+const images = document.querySelectorAll(".swiper-slide.second img");
+const expandedImageOverlay = document.querySelector(".expanded-image-overlay");
+
+expandedImageOverlay.addEventListener("click", (e)=>{
+  let currentlyClicked = e.target;
+  if (currentlyClicked.id != "expandedImage"){
+    expandedImageOverlay.style.display = 'none';
+    document.body.style.overflow = 'visible'
+  }
+})
 
 images.forEach((image) => {
   image.setAttribute('onclick', 'expandImage(this)');
@@ -112,12 +121,16 @@ function expandImage(image) {
   expandedImage.src = image.src;
   const expandedImageOverlay = document.getElementById('expandedImageOverlay');
   expandedImageOverlay.style.display = 'grid';
+  document.body.style.overflow = 'hidden'
 }
 
 function closeExpandedImage() {
   const expandedImageOverlay = document.getElementById('expandedImageOverlay');
   expandedImageOverlay.style.display = 'none';
+  document.body.style.overflow = 'visible'
 }
+
+
 
 questions.forEach((question) => {
   question.addEventListener("click", (e) => {
