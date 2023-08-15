@@ -576,6 +576,7 @@ div.image-owner{
 .services h1{
     font-weight: 600;
     margin-top: 2rem;
+    margin-bottom: 0;
 }
 #image-imported{
     margin-top: 2rem;
