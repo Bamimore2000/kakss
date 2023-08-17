@@ -256,7 +256,7 @@ header a.current, .second-nav li.current{
 .yellow{
     color: #FFB800;
     font-weight: 500;
-    margin-top: -3px;
+    line-height: 1;
 }
 .first-content h1{
     font-weight: 400;
@@ -264,7 +264,7 @@ header a.current, .second-nav li.current{
     font-size: 4.8rem;
     line-height: 0.8;
     line-height: 01;
-    margin-bottom: 0;
+    margin-bottom: 10px;
 }
 .hero-second-part{
     margin-top: 150px;
@@ -478,6 +478,9 @@ div#testimonials, div#about{
 .about h1{
     font-weight: 600;
 }
+.details h2{
+  margin-bottom: 5px;
+}
 
 .bold-text{
   position: relative;
@@ -576,8 +579,8 @@ div.image-owner{
 .services h1{
     font-weight: 600;
     margin-top: 2rem;
-    margin-bottom: 0;
 }
+
 #image-imported{
     margin-top: 2rem;
     height: 75vh;
@@ -603,6 +606,7 @@ div.image-owner{
 }
 .sections h4{
     font-size: 20px;
+    margin-bottom: 5px;
 }
 .small-image{
     display: block;
@@ -1445,6 +1449,12 @@ div.image-owner{
     }
     .swiper-slide.second{
       height: 200px;
+    }
+    .show-boat .container div .figure{
+      font-size: 16px;
+    }
+    .show-boat .container div .name{
+      font-size: 13px;
     }
   }
 
